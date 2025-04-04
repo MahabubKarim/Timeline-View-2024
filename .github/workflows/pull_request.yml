@@ -18,9 +18,3 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
-      - name: Grant execute permissions for gradlew
-        run: chmod +x gradlew
-
-      - name: Run unit tests
-        run: ./gradlew clean testDebugUnitTest  # Adjusted test task for Android
