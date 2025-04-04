@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Fixed 'run-on' typo
 
     steps:
       - uses: actions/checkout@v4
@@ -17,8 +17,9 @@ jobs:
           distribution: 'temurin'
           java-version: 17
           cache: 'gradle'
+
       - name: Grant execute permissions for gradlew
         run: chmod +x gradlew
 
       - name: Run unit tests
-        run: ./gradlew clean testDebug
+        run: ./gradlew clean testDebugUnitTest  # Adjusted test task for Android
